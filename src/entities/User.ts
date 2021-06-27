@@ -6,6 +6,8 @@ import {
   UpdateDateColumn,
 } from "typeorm";
 
+import { Exclude } from "class-transformer";
+
 import { v4 as uuid } from "uuid";
 
 @Entity("users")
@@ -22,6 +24,7 @@ class User {
   @Column()
   admin: boolean;
 
+  @Exclude()
   @Column()
   password: string;
 
